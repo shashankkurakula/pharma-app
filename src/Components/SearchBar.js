@@ -31,6 +31,7 @@ function SearchBar({ placeholder, data }) {
       if (value.title.toLowerCase().includes(searchWord.toLowerCase())) {
         Drugset.add(value.title)
       }
+      return true
     })
     data.filter((value) => {
       value.mechanismsOfAction.filter((mech) => {
@@ -164,8 +165,10 @@ function SearchBar({ placeholder, data }) {
       </div>
 
       {/* {viewDrugsList ? <DrugInfo drugInfo={drugInfo} /> : <Landing />} */}
-      {viewDrugsList && <DrugInfo drugInfo={drugInfo} /> }
-      {!wordEntered && !drugList.length && !viewMechanismSelectedDrugsList && <Landing /> }
+      {viewDrugsList && <DrugInfo drugInfo={drugInfo} />}
+      {!wordEntered && !drugList.length && !viewMechanismSelectedDrugsList && (
+        <Landing />
+      )}
 
       {viewMechanismSelectedDrugsList ? (
         <div className='dataResult customScroll'>

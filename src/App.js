@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const fetchDrugs = async () => {
-      const drugsUrl = 'https://comfortable-trench-coat-clam.cyclic.app/drugs'
+      const drugsUrl = 'https://cyan-gentle-adder.cyclic.app/drugs'
 
       try {
         const drugsData = await axios.get(drugsUrl)
